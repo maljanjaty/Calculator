@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                sh 'run app'
+                sh 'node app'
                 input message: 'Finished using the web site? (Click "Proceed" to continue)'
                 sh './public/kill.sh'
             }
