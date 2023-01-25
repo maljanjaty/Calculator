@@ -21,9 +21,9 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                sh './deliver.sh'
+                sh './public/deliver.sh'
                 input message: 'Finished using the web site? (Click "Proceed" to continue)'
-                sh './kill.sh'
+                sh './public/kill.sh'
             }
         }
     }
