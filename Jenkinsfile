@@ -21,12 +21,8 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                set -x
                 sh 'npm run build'
-                set +x
                 sh 'npm start &'
-                sleep 1
-                set +x
                 input message: 'Finished using the web site? (Click "Proceed" to continue)'
                 sh './public/kill.sh'
             }
